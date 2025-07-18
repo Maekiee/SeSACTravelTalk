@@ -1,13 +1,13 @@
 import UIKit
 
-class ViewController: UIViewController {
+class ChatViewController: UIViewController {
 
-    // start
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+
     }
+    
 
 
 }
-
