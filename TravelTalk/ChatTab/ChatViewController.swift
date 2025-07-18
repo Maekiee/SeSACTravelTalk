@@ -3,7 +3,6 @@ import UIKit
 class ChatViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var chatTableView: UITableView!
-    static let chatIdentifier: String = "ChatTableViewCell"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -15,8 +14,8 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         chatTableView.dataSource = self
         chatTableView.dataSource = self
         
-        let xib = UINib(nibName: ChatViewController.chatIdentifier, bundle: nil)
-        chatTableView.register(xib, forCellReuseIdentifier: ChatViewController.chatIdentifier)
+        let xib = UINib(nibName: CellStorage.chatIdentifier, bundle: nil)
+        chatTableView.register(xib, forCellReuseIdentifier: CellStorage.chatIdentifier)
         
     }
     
@@ -25,11 +24,8 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = chatTableView.dequeueReusableCell(withIdentifier: ChatViewController.chatIdentifier, for: indexPath) as! ChatTableViewCell
+        let cell = chatTableView.dequeueReusableCell(withIdentifier: CellStorage.chatIdentifier, for: indexPath) as! ChatTableViewCell
         
         return cell
     }
-    
-
-
 }

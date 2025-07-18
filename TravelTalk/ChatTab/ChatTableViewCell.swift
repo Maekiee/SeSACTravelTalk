@@ -1,8 +1,6 @@
 import UIKit
 
 class ChatTableViewCell: UITableViewCell {
-    
-
     @IBOutlet var profileImage: UIImageView!
     @IBOutlet var userNameLabel: UILabel!
     @IBOutlet var messageLabel: UILabel!
