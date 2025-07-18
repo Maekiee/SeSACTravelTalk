@@ -1,23 +1,24 @@
-//
-//  ChatTableViewCell.swift
-//  TravelTalk
-//
-//  Created by 박도원 on 7/18/25.
-//
-
 import UIKit
 
 class ChatTableViewCell: UITableViewCell {
+    
 
+    @IBOutlet var profileImage: UIImageView!
+    @IBOutlet var userNameLabel: UILabel!
+    @IBOutlet var messageLabel: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        configureView()
+    }
+    
+    private func configureView() {
+        profileImage.layer.cornerRadius = frame.width / 2
+        profileImage.clipsToBounds = true
+        profileImage.backgroundColor = .lightGray
+    
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
     
 }

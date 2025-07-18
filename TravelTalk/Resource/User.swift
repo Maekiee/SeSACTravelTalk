@@ -1,10 +1,3 @@
-//
-//  User.swift
-//  SeSAC7Step1Remind
-//
-//  Created by Jack on 7/18/25.
-//
-  
 import Foundation
 
 struct User {
