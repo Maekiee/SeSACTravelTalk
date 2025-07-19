@@ -9,8 +9,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
-        chatTableView.rowHeight = 100
-
+        chatTableView.rowHeight = 80
     }
     
     private func configureView() {
@@ -18,6 +17,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         chatTableView.dataSource = self
         let xib = UINib(nibName: CellStorage.chatIdentifier, bundle: nil)
         chatTableView.register(xib, forCellReuseIdentifier: CellStorage.chatIdentifier)
+        searchBar.searchBarStyle = .minimal
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
