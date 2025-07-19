@@ -33,6 +33,7 @@ class ChatTableViewCell: UITableViewCell {
         messageLabel.text = row.chatList.last?.message
         lastMessageTimeLabel.text = row.chatList.last?.formatDate
     }
+    
 
     
 }

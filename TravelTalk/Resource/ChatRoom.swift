@@ -13,5 +13,12 @@ struct ChatRoom {
     var setChatRoomImage: UIImage {
         return UIImage(named: chatroomImage)!
     }
-    
+ 
 }
+
+struct ChatRoomInfo {
+    let chatRoomdTitle: String
+    let lastMessage: String?
+    let userNmae: String?
+}
+
