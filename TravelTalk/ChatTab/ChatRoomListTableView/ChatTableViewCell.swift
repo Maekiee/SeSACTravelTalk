@@ -30,7 +30,7 @@ class ChatTableViewCell: UITableViewCell {
     }
     
     func configureData(row: ChatRoom) {
-        profileImage.image = UIImage(named: row.chatroomImage)
+        profileImage.image = row.setChatRoomImage
         userNameLabel.text = row.chatroomName
         messageLabel.text = row.chatList.last?.message
         lastMessageTimeLabel.text = row.chatList.last?.formatDate

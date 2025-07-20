@@ -5,7 +5,7 @@ struct ChatRoom {
     //채팅방 고유 ID
     let chatroomId: Int
     //채팅방 이미지
-    let chatroomImage: String
+    let chatroomImage: String 
     //채팅방 이름
     let chatroomName: String
     var chatList: [Chat] = []
