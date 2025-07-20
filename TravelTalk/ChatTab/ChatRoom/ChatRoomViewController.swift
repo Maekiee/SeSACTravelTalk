@@ -2,19 +2,19 @@
 
 import UIKit
 
-class ChatRoomViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ChatRoomViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
     @IBOutlet var chatRoomTableView: UITableView!
+    @IBOutlet var chatTextField: UITextField!
+    
+    
     var chatRoomText = ""
     var chatList: [Chat] = []
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
         configTableView()
-        
     }
-    
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -35,9 +35,11 @@ class ChatRoomViewController: UIViewController, UITableViewDelegate, UITableView
         chatRoomTableView.register(xib2, forCellReuseIdentifier: CellIdentifiers.partnerCellIdentifier)
         
         chatRoomTableView.rowHeight = UITableView.automaticDimension
-        
         chatRoomTableView.delegate = self
         chatRoomTableView.dataSource = self
+        chatTextField.delegate = self
+        
+        chatTextField.placeholder = "메세지를 입력하세요"
     }
     
     func scrollToBottom() {
@@ -73,11 +75,30 @@ class ChatRoomViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     
-    //MARK: - 버튼 액션
+    //MARK: -UI 액션
     @IBAction func navBarColseTapped(_ sender: UIBarButtonItem) {
         navigationController?.popViewController(animated: true)
         
     }
     
-
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        guard let newMessage = textField.text else { return false }
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd HH:mm"
+        let stringDate = formatter.string(from: date)
+        
+        let post = Chat(
+            user: User(name: "김새싹", image: "Me"),
+            date: stringDate,
+            message: newMessage
+        )
+        chatList.append(post)
+        chatTextField.text = ""
+        chatRoomTableView.reloadData()
+        scrollToBottom()
+        return false
+    }
+    
+    
 }

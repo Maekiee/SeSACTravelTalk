@@ -162,11 +162,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="44Q-2K-Tol">
-                                <rect key="frame" x="0.0" y="103" width="393" height="681"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="665"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xJL-HL-HrB">
-                                <rect key="frame" x="20" y="784" width="353" height="34"/>
+                                <rect key="frame" x="20" y="776" width="353" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -179,8 +179,8 @@
                             <constraint firstItem="sGH-b2-2KB" firstAttribute="trailing" secondItem="44Q-2K-Tol" secondAttribute="trailing" id="Kaj-Ww-QT6"/>
                             <constraint firstItem="xJL-HL-HrB" firstAttribute="leading" secondItem="sGH-b2-2KB" secondAttribute="leading" constant="20" id="Vko-2D-NoD"/>
                             <constraint firstItem="44Q-2K-Tol" firstAttribute="top" secondItem="sGH-b2-2KB" secondAttribute="top" id="ddO-18-T0V"/>
-                            <constraint firstItem="sGH-b2-2KB" firstAttribute="bottom" secondItem="xJL-HL-HrB" secondAttribute="bottom" id="lhc-Sq-Z3C"/>
-                            <constraint firstItem="xJL-HL-HrB" firstAttribute="top" secondItem="44Q-2K-Tol" secondAttribute="bottom" id="y73-tR-62P"/>
+                            <constraint firstItem="sGH-b2-2KB" firstAttribute="bottom" secondItem="xJL-HL-HrB" secondAttribute="bottom" constant="8" id="lhc-Sq-Z3C"/>
+                            <constraint firstItem="xJL-HL-HrB" firstAttribute="top" secondItem="44Q-2K-Tol" secondAttribute="bottom" constant="8" id="y73-tR-62P"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="채팅바바바앙" id="fPr-gw-kLy">
@@ -192,6 +192,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="chatRoomTableView" destination="44Q-2K-Tol" id="dfP-fy-drS"/>
+                        <outlet property="chatTextField" destination="xJL-HL-HrB" id="mAc-Ou-pHU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Ol-Ui-GAy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
