@@ -4,8 +4,8 @@ class ChatTabViewController: UIViewController, UICollectionViewDelegate, UIColle
     @IBOutlet var chatTabCollectionView: UICollectionView!
     @IBOutlet var searchBar: UISearchBar!
     
-    let chatRoomList: [ChatRoom] = ChatList.list
-    var list: [ChatRoom] = [] {
+    private let chatRoomList: [ChatRoom] = ChatList.list
+    private var list: [ChatRoom] = [] {
         didSet {
             chatTabCollectionView.reloadData()
         }
@@ -51,7 +51,7 @@ class ChatTabViewController: UIViewController, UICollectionViewDelegate, UIColle
         searchingChatRoom(searchingValue)
     }
     
-    func searchingChatRoom(_ searchWord: String) {
+    private func searchingChatRoom(_ searchWord: String) {
         let filerList = list.filter { item in
             guard let lastMessge = item.chatList.last?.message else { return false }
             guard let userName = item.chatList.last?.user.name else { return false }

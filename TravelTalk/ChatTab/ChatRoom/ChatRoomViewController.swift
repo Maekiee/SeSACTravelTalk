@@ -22,7 +22,7 @@ class ChatRoomViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     
-    func configTableView() {
+    private func configTableView() {
         title = chatRoomText
         navigationItem.leftBarButtonItem?.tintColor = .black
         chatRoomTableView.separatorStyle = .none
@@ -42,7 +42,7 @@ class ChatRoomViewController: UIViewController, UITableViewDelegate, UITableView
         chatTextField.placeholder = "메세지를 입력하세요"
     }
     
-    func scrollToBottom() {
+    private func scrollToBottom() {
         let lastIndex = chatList.count - 1
         let indexPath = IndexPath(row: lastIndex, section: 0)
         
