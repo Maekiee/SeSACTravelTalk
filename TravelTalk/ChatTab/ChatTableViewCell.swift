@@ -12,6 +12,8 @@ class ChatTableViewCell: UITableViewCell {
     }
     
     private func configureView() {
+        selectionStyle = .none
+        
         profileImage.layer.cornerRadius = profileImage.frame.width / 2
         profileImage.contentMode = .scaleAspectFill
         profileImage.clipsToBounds = true
