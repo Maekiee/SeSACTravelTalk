@@ -23,5 +23,12 @@ class PartnerChatTableViewCell: UITableViewCell {
         chatTimeLabel.setChatTimeLabel()
     }
     
+    func configureCellData(row: Chat) {
+        profileImage.image = row.user.setImage
+        userNameLabel.text = row.user.name
+        chatContentLabel.text = row.message
+        chatTimeLabel.text = row.chatRoomFormatDate
+    }
+    
     
 }

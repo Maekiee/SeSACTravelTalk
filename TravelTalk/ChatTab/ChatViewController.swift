@@ -72,11 +72,10 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         print(#function)
         let vc = self.storyboard?.instantiateViewController(withIdentifier: CellIdentifiers.chatRoomIndentifier) as! ChatRoomViewController
         
+        vc.chatRoomText = list[indexPath.row].chatroomName
+        vc.chatList = list[indexPath.row].chatList
         
-        // 채팅방 이름
-        // 채팅 내용
-        // 테이블 뷰 두개 사용
+        
         navigationController?.pushViewController(vc, animated: true)
-        
     }
 }

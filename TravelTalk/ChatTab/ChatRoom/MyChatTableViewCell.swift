@@ -16,5 +16,10 @@ class MyChatTableViewCell: UITableViewCell {
         chatTimeLabel.setChatTimeLabel()
     }
     
+    func configureCellData(row: Chat) {
+        chatLabel.text = row.message
+        chatTimeLabel.text = row.chatRoomFormatDate
+    }
+    
     
 }
