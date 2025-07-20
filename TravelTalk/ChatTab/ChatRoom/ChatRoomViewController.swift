@@ -4,24 +4,29 @@ import UIKit
 
 class ChatRoomViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet var chatRoomTableView: UITableView!
-    
+    var chatRoonText = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
        
         configTableView()
+        
     }
     
     
-    
     func configTableView() {
-        title = "채팅바"
-        navigationItem.leftBarButtonItem?.tintColor = .gray
+        title = chatRoonText
+        navigationItem.leftBarButtonItem?.tintColor = .black
+        chatRoomTableView.separatorStyle = .none
+        
+        
         let xib = UINib(nibName: CellIdentifiers.myChatIdentifier, bundle: nil)
         chatRoomTableView.register(xib, forCellReuseIdentifier: CellIdentifiers.myChatIdentifier)
         
         let xib2 = UINib(nibName: CellIdentifiers.partnerCellIdentifier, bundle: nil)
         chatRoomTableView.register(xib2, forCellReuseIdentifier: CellIdentifiers.partnerCellIdentifier)
+        
+        chatRoomTableView.rowHeight = UITableView.automaticDimension
         
         chatRoomTableView.delegate = self
         chatRoomTableView.dataSource = self

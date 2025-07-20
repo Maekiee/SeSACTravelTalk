@@ -10,43 +10,54 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyChatTableViewCell" rowHeight="88" id="KGk-i7-Jjw" customClass="MyChatTableViewCell" customModule="TravelTalk" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="346" height="88"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyChatTableViewCell" rowHeight="87" id="KGk-i7-Jjw" customClass="MyChatTableViewCell" customModule="TravelTalk" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="413" height="87"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="346" height="88"/>
+                <rect key="frame" x="0.0" y="0.0" width="413" height="87"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5BV-Tt-FsM">
-                        <rect key="frame" x="61" y="10" width="275" height="69"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5BV-Tt-FsM">
+                        <rect key="frame" x="339" y="8" width="58" height="71"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LoP-yl-bKY">
-                                <rect key="frame" x="110" y="24" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fyK-Lw-mPs">
+                                <rect key="frame" x="8" y="8" width="42" height="55"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="fyK-Lw-mPs" firstAttribute="leading" secondItem="5BV-Tt-FsM" secondAttribute="leading" constant="8" id="Ir7-Mx-6i9"/>
+                            <constraint firstAttribute="bottom" secondItem="fyK-Lw-mPs" secondAttribute="bottom" constant="8" id="KUC-zd-jW0"/>
+                            <constraint firstItem="fyK-Lw-mPs" firstAttribute="top" secondItem="5BV-Tt-FsM" secondAttribute="top" constant="8" id="exq-iX-hcZ"/>
+                            <constraint firstAttribute="trailing" secondItem="fyK-Lw-mPs" secondAttribute="trailing" constant="8" id="plc-ga-eoW"/>
+                        </constraints>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8D1-vI-vBl">
-                        <rect key="frame" x="11" y="58" width="42" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8D1-vI-vBl">
+                        <rect key="frame" x="293" y="58" width="42" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="5BV-Tt-FsM" firstAttribute="leading" secondItem="8D1-vI-vBl" secondAttribute="trailing" constant="4" id="LAK-ab-AVK"/>
+                    <constraint firstAttribute="bottom" secondItem="5BV-Tt-FsM" secondAttribute="bottom" constant="8" id="WGs-lD-RQE"/>
+                    <constraint firstItem="5BV-Tt-FsM" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="cAq-sk-5pn"/>
+                    <constraint firstAttribute="trailing" secondItem="5BV-Tt-FsM" secondAttribute="trailing" constant="16" id="tnR-rz-KwJ"/>
+                    <constraint firstItem="8D1-vI-vBl" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="40" id="udD-23-qSE"/>
+                    <constraint firstItem="8D1-vI-vBl" firstAttribute="bottom" secondItem="5BV-Tt-FsM" secondAttribute="bottom" id="uoU-Ps-HPZ"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="chatContainer" destination="5BV-Tt-FsM" id="GUK-vs-2mS"/>
-                <outlet property="chatLabel" destination="LoP-yl-bKY" id="DQr-gf-rgr"/>
+                <outlet property="chatLabel" destination="fyK-Lw-mPs" id="7P7-mw-yhZ"/>
                 <outlet property="chatTimeLabel" destination="8D1-vI-vBl" id="4My-cQ-tQc"/>
             </connections>
-            <point key="canvasLocation" x="24.427480916030532" y="35.91549295774648"/>
+            <point key="canvasLocation" x="75.572519083969468" y="35.563380281690144"/>
         </tableViewCell>
     </objects>
     <resources>

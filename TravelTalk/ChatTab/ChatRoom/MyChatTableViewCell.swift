@@ -9,11 +9,12 @@ class MyChatTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        configFixedStyle()
+        
+        selectionStyle = .none
+        chatContainer.setChatBubbleStyle(isMyChat: true)
+        chatLabel.setChatLabelStyle()
+        chatTimeLabel.setChatTimeLabel()
     }
     
-    func configFixedStyle() {
-        chatContainer.backgroundColor = .black
-    }
     
 }
