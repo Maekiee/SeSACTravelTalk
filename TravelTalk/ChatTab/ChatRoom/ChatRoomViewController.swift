@@ -16,6 +16,12 @@ class ChatRoomViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        scrollToBottom()
+    }
+    
+    
     func configTableView() {
         title = chatRoomText
         navigationItem.leftBarButtonItem?.tintColor = .black
@@ -34,7 +40,12 @@ class ChatRoomViewController: UIViewController, UITableViewDelegate, UITableView
         chatRoomTableView.dataSource = self
     }
     
-    
+    func scrollToBottom() {
+        let lastIndex = chatList.count - 1
+        let indexPath = IndexPath(row: lastIndex, section: 0)
+        
+        chatRoomTableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
+    }
     
     
     // MARK: - tableView
@@ -44,6 +55,7 @@ class ChatRoomViewController: UIViewController, UITableViewDelegate, UITableView
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let chatItem = chatList[indexPath.row]
+        
         if chatItem.user.name == ChatList.me.name {
             let myChatCell = chatRoomTableView.dequeueReusableCell(withIdentifier: CellIdentifiers.myChatIdentifier, for: indexPath) as! MyChatTableViewCell
             
@@ -53,7 +65,7 @@ class ChatRoomViewController: UIViewController, UITableViewDelegate, UITableView
             return myChatCell
         } else {
             let partnerCell = chatRoomTableView.dequeueReusableCell(withIdentifier: CellIdentifiers.partnerCellIdentifier, for: indexPath) as! PartnerChatTableViewCell
-            
+    
             partnerCell.configureCellData(row: chatItem)
             
             return partnerCell
@@ -61,6 +73,7 @@ class ChatRoomViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     
+    //MARK: - 버튼 액션
     @IBAction func navBarColseTapped(_ sender: UIBarButtonItem) {
         navigationController?.popViewController(animated: true)
         
