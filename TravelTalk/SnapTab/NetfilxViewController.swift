@@ -10,75 +10,29 @@ class NetfilxViewController: UIViewController {
         return label
     }()
     
+    private let placeholders: [String] = ["이메일 주소 또는 전화번호","비밀번호","닉네임","위치","추천 코드 입력"]
+    
     private lazy var stackView: UIStackView = {
         let stack = UIStackView()
         stack.axis = .vertical
         stack.spacing = 20
         stack.alignment = .fill
-        [textfield1, textfield2, textfield3, textfield4, textfield5].forEach { item in
-            stack.addArrangedSubview(item)
+        placeholders.forEach { item in
+            let textField = UITextField()
+            textField.attributedPlaceholder = NSAttributedString(
+                string: item,
+                attributes: [NSAttributedString.Key.foregroundColor: UIColor.white]
+            )
+            textField.backgroundColor = .gray
+            textField.textColor = .white
+            textField.layer.cornerRadius = 8
+            
+            textField.snp.makeConstraints { make in
+                make.height.equalTo(44)
+            }
+            stack.addArrangedSubview(textField)
         }
         return stack
-    }()
-    
-    private let textfield1: UITextField = {
-        let textField = UITextField()
-        textField.attributedPlaceholder = NSAttributedString(
-            string: "이메일 주소 또는 전화번호",
-            attributes: [NSAttributedString.Key.foregroundColor: UIColor.white]
-        )
-        textField.backgroundColor = .gray
-        textField.textColor = .white
-        textField.layer.cornerRadius = 8
-        return textField
-    }()
-    
-    private let textfield2: UITextField = {
-        let textField = UITextField()
-        textField.backgroundColor = .gray
-        textField.attributedPlaceholder = NSAttributedString(
-            string: "비밀번호",
-            attributes: [NSAttributedString.Key.foregroundColor: UIColor.white]
-        )
-        textField.textColor = .white
-        textField.layer.cornerRadius = 8
-        return textField
-    }()
-    
-    private let textfield3: UITextField = {
-        let textField = UITextField()
-        textField.backgroundColor = .gray
-        textField.attributedPlaceholder = NSAttributedString(
-            string: "닉네임",
-            attributes: [NSAttributedString.Key.foregroundColor: UIColor.white]
-        )
-        textField.textColor = .white
-        textField.layer.cornerRadius = 8
-        return textField
-    }()
-    
-    private let textfield4: UITextField = {
-        let textField = UITextField()
-        textField.backgroundColor = .gray
-        textField.attributedPlaceholder = NSAttributedString(
-            string: "워치",
-            attributes: [NSAttributedString.Key.foregroundColor: UIColor.white]
-        )
-        textField.textColor = .white
-        textField.layer.cornerRadius = 8
-        return textField
-    }()
-    
-    private let textfield5: UITextField = {
-        let textField = UITextField()
-        textField.backgroundColor = .gray
-        textField.attributedPlaceholder = NSAttributedString(
-            string: "추천 코드 입력",
-            attributes: [NSAttributedString.Key.foregroundColor: UIColor.white]
-        )
-        textField.textColor = .white
-        textField.layer.cornerRadius = 8
-        return textField
     }()
     
     private let registerButton: UIButton = {
@@ -128,25 +82,9 @@ class NetfilxViewController: UIViewController {
             make.horizontalEdges.equalTo(view).inset(20)
         }
         
-        textfield1.snp.makeConstraints { make in
-            make.height.equalTo(44)
-        }
-        textfield2.snp.makeConstraints { make in
-            make.height.equalTo(44)
-        }
-        textfield3.snp.makeConstraints { make in
-            make.height.equalTo(44)
-        }
-        textfield4.snp.makeConstraints { make in
-            make.height.equalTo(44)
-        }
-        textfield5.snp.makeConstraints { make in
-            make.height.equalTo(44)
-        }
-        
         view.addSubview(registerButton)
         registerButton.snp.makeConstraints { make in
-            make.top.equalTo(textfield5.snp.bottom).offset(20)
+            make.top.equalTo(stackView.snp.bottom).offset(20)
             make.horizontalEdges.equalTo(view).inset(20)
             make.height.equalTo(52)
         }
