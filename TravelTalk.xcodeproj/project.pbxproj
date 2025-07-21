@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7692A4FE2E2E07660001DC33 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7692A4FD2E2E07660001DC33 /* SnapKit */; };
 		76DABD092E2CB0450004482B /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 76DABD082E2CB0450004482B /* IQKeyboardManagerSwift */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				76DABD092E2CB0450004482B /* IQKeyboardManagerSwift in Frameworks */,
+				7692A4FE2E2E07660001DC33 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +86,7 @@
 			name = TravelTalk;
 			packageProductDependencies = (
 				76DABD082E2CB0450004482B /* IQKeyboardManagerSwift */,
+				7692A4FD2E2E07660001DC33 /* SnapKit */,
 			);
 			productName = TravelTalk;
 			productReference = 769E67692E2A136C003FBD49 /* TravelTalk.app */;
@@ -115,6 +118,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				76DABD072E2CB0450004482B /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				7692A4FC2E2E07660001DC33 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 769E676A2E2A136C003FBD49 /* Products */;
@@ -354,6 +358,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		7692A4FC2E2E07660001DC33 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
 		76DABD072E2CB0450004482B /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
@@ -365,6 +377,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		7692A4FD2E2E07660001DC33 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7692A4FC2E2E07660001DC33 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
 		76DABD082E2CB0450004482B /* IQKeyboardManagerSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 76DABD072E2CB0450004482B /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;

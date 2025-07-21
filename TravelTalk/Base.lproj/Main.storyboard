@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xxn-qH-Jk6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xxn-qH-Jk6">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -21,11 +21,12 @@
                     <connections>
                         <segue destination="Wy0-5H-jjz" kind="relationship" relationship="viewControllers" id="anI-aS-Jc0"/>
                         <segue destination="ZKa-AG-pHU" kind="relationship" relationship="viewControllers" id="hJi-Nc-qsH"/>
+                        <segue destination="gnb-k2-ZwI" kind="relationship" relationship="viewControllers" id="9Xu-VR-Tu1"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="opw-N5-2lk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1923" y="83"/>
+            <point key="canvasLocation" x="-2999" y="458"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="hz5-Sf-dJF">
@@ -52,7 +53,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="EL1-In-bEM">
-                                <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                                <rect key="frame" x="0.0" y="118" width="393" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="zTF-cU-Hmh"/>
                                 </constraints>
@@ -62,14 +63,14 @@
                                 </connections>
                             </searchBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0fp-Xj-ggg">
-                                <rect key="frame" x="0.0" y="111" width="393" height="0.6666666666666714"/>
+                                <rect key="frame" x="0.0" y="170" width="393" height="0.66666666666665719"/>
                                 <color key="backgroundColor" systemColor="systemGray2Color"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="0.5" id="Nrs-Uh-oSO"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="OrK-hM-m99">
-                                <rect key="frame" x="0.0" y="111.66666666666669" width="393" height="706.33333333333326"/>
+                                <rect key="frame" x="0.0" y="170.66666666666669" width="393" height="613.33333333333326"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -107,7 +108,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="7SS-vg-n9L">
-                                <rect key="frame" x="0.0" y="103" width="393" height="44"/>
+                                <rect key="frame" x="0.0" y="162" width="393" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="rBW-KU-WGu"/>
                                 </constraints>
@@ -117,7 +118,7 @@
                                 </connections>
                             </searchBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1W7-1S-onE">
-                                <rect key="frame" x="0.0" y="147" width="393" height="622"/>
+                                <rect key="frame" x="0.0" y="206" width="393" height="529"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Jfw-EW-4bn">
                                     <size key="itemSize" width="113" height="89"/>
@@ -167,7 +168,7 @@
                     <tabBarItem key="tabBarItem" title="채팅" image="bubble.right.fill" catalog="system" id="Puw-Vj-Nj6"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Zji-5d-EWu">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <rect key="frame" x="0.0" y="118" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -186,7 +187,7 @@
                     <tabBarItem key="tabBarItem" title="업 다운" image="formfitting.gamecontroller.fill" catalog="system" id="UTn-nt-57E"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="iF4-Fa-qqL">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <rect key="frame" x="0.0" y="118" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -198,13 +199,66 @@
             </objects>
             <point key="canvasLocation" x="-750.38167938931292" y="458.45070422535213"/>
         </scene>
+        <!--snap 연습-->
+        <scene sceneID="dey-f2-SZ7">
+            <objects>
+                <viewController storyboardIdentifier="SnapTabViewController" id="gnb-k2-ZwI" customClass="SnapTabViewController" customModule="TravelTalk" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="45W-3Y-pzK">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k7b-We-CYz">
+                                <rect key="frame" x="20" y="138" width="353" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="ar4-IO-l4s"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="넷플릭스"/>
+                                <connections>
+                                    <action selector="goNetfilxScreenButton:" destination="Y8C-xh-xFO" eventType="touchUpInside" id="u9a-mE-ADp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WJm-0g-V3d">
+                                <rect key="frame" x="20" y="202" width="353" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="RmS-Gk-m9h"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="네이버"/>
+                                <connections>
+                                    <action selector="goNaverScreenButtonTapped:" destination="Y8C-xh-xFO" eventType="touchUpInside" id="f8v-50-6Vu"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="553-NB-nIP"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="WJm-0g-V3d" firstAttribute="top" secondItem="k7b-We-CYz" secondAttribute="bottom" constant="20" id="74o-u0-Ksb"/>
+                            <constraint firstItem="553-NB-nIP" firstAttribute="trailing" secondItem="k7b-We-CYz" secondAttribute="trailing" constant="20" id="7Af-T9-P9b"/>
+                            <constraint firstItem="k7b-We-CYz" firstAttribute="top" secondItem="553-NB-nIP" secondAttribute="top" constant="20" id="7LX-JE-V66"/>
+                            <constraint firstItem="k7b-We-CYz" firstAttribute="leading" secondItem="553-NB-nIP" secondAttribute="leading" constant="20" id="Dtg-Ed-wAo"/>
+                            <constraint firstItem="WJm-0g-V3d" firstAttribute="leading" secondItem="553-NB-nIP" secondAttribute="leading" constant="20" id="VKU-lq-7zg"/>
+                            <constraint firstItem="553-NB-nIP" firstAttribute="trailing" secondItem="WJm-0g-V3d" secondAttribute="trailing" constant="20" id="far-8y-jyJ"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="snap 연습" image="scribble.variable" catalog="system" id="WDd-dD-dl9"/>
+                    <connections>
+                        <outlet property="goNaverButton" destination="WJm-0g-V3d" id="g2b-Y8-y1V"/>
+                        <outlet property="goNetfilxButton" destination="k7b-We-CYz" id="eVt-rD-bpP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2BG-AA-KZH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Y8C-xh-xFO" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="-750" y="1275"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="2Fl-5l-58O">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mpG-nI-FVQ" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="oT5-FN-GeW">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <rect key="frame" x="0.0" y="118" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -225,11 +279,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="44Q-2K-Tol">
-                                <rect key="frame" x="0.0" y="103" width="393" height="665"/>
+                                <rect key="frame" x="0.0" y="162" width="393" height="572"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xJL-HL-HrB">
-                                <rect key="frame" x="20" y="776" width="353" height="34"/>
+                                <rect key="frame" x="20" y="742" width="353" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -267,6 +321,7 @@
         <image name="bubble.right.fill" catalog="system" width="128" height="110"/>
         <image name="chevron.left" catalog="system" width="97" height="128"/>
         <image name="formfitting.gamecontroller.fill" catalog="system" width="128" height="64"/>
+        <image name="scribble.variable" catalog="system" width="128" height="119"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

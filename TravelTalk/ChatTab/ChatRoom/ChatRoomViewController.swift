@@ -14,13 +14,12 @@ class ChatRoomViewController: UIViewController, UITableViewDelegate, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         configTableView()
+        /// view did appear 에서 하면 조금 느림
+        DispatchQueue.main.async {
+            self.scrollToBottom()
+        }
+        
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        scrollToBottom()
-    }
-    
     
     private func configTableView() {
         title = chatRoomText

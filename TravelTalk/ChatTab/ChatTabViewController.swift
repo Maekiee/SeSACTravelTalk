@@ -2,7 +2,11 @@ import UIKit
 
 class ChatTabViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UISearchBarDelegate {
     @IBOutlet var chatTabCollectionView: UICollectionView!
-    @IBOutlet var searchBar: UISearchBar!
+    @IBOutlet var searchBar: UISearchBar! {
+        didSet {
+            //
+        }
+    }
     
     private let chatRoomList: [ChatRoom] = ChatList.list
     private var list: [ChatRoom] = [] {
@@ -28,6 +32,13 @@ class ChatTabViewController: UIViewController, UICollectionViewDelegate, UIColle
         chatTabCollectionView.register(xib, forCellWithReuseIdentifier: CellIdentifiers.chatTabCellIdentifier)
         searchBar.searchBarStyle = .minimal
         
+        chatTabCollectionView.collectionViewLayout = createLayout()
+        
+        
+    }
+    
+    // ****
+    func createLayout() -> UICollectionViewFlowLayout {
         let layout = UICollectionViewFlowLayout()
         let deviceWidth = UIScreen.main.bounds.width
         layout.itemSize = CGSize(width: deviceWidth, height: 80)
@@ -35,9 +46,9 @@ class ChatTabViewController: UIViewController, UICollectionViewDelegate, UIColle
         layout.minimumInteritemSpacing = 0
         layout.minimumLineSpacing = 20
         layout.scrollDirection = .vertical
-        chatTabCollectionView.collectionViewLayout = layout
-        
+        return layout
     }
+    
     //MARK: 검색
     // 입력할 때마다 호출
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
