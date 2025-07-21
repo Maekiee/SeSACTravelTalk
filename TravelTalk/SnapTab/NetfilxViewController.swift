@@ -10,6 +10,17 @@ class NetfilxViewController: UIViewController {
         return label
     }()
     
+    private lazy var stackView: UIStackView = {
+        let stack = UIStackView()
+        stack.axis = .vertical
+        stack.spacing = 20
+        stack.alignment = .fill
+        [textfield1, textfield2, textfield3, textfield4, textfield5].forEach { item in
+            stack.addArrangedSubview(item)
+        }
+        return stack
+    }()
+    
     private let textfield1: UITextField = {
         let textField = UITextField()
         textField.attributedPlaceholder = NSAttributedString(
@@ -111,38 +122,25 @@ class NetfilxViewController: UIViewController {
             make.centerX.equalTo(view.center)
         }
         
-        view.addSubview(textfield1)
-        textfield1.snp.makeConstraints { make in
+        view.addSubview(stackView)
+        stackView.snp.makeConstraints { make in
             make.top.equalTo(titleLabel.snp.bottom).offset(100)
             make.horizontalEdges.equalTo(view).inset(20)
-            make.height.equalTo(44)
         }
         
-        view.addSubview(textfield2)
+        textfield1.snp.makeConstraints { make in
+            make.height.equalTo(44)
+        }
         textfield2.snp.makeConstraints { make in
-            make.top.equalTo(textfield1.snp.bottom).offset(20)
-            make.horizontalEdges.equalTo(view).inset(20)
             make.height.equalTo(44)
         }
-        
-        view.addSubview(textfield3)
         textfield3.snp.makeConstraints { make in
-            make.top.equalTo(textfield2.snp.bottom).offset(20)
-            make.horizontalEdges.equalTo(view).inset(20)
             make.height.equalTo(44)
         }
-        
-        view.addSubview(textfield4)
         textfield4.snp.makeConstraints { make in
-            make.top.equalTo(textfield3.snp.bottom).offset(20)
-            make.horizontalEdges.equalTo(view).inset(20)
             make.height.equalTo(44)
         }
-        
-        view.addSubview(textfield5)
         textfield5.snp.makeConstraints { make in
-            make.top.equalTo(textfield4.snp.bottom).offset(20)
-            make.horizontalEdges.equalTo(view).inset(20)
             make.height.equalTo(44)
         }
         
