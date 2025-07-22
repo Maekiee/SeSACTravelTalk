@@ -1,24 +1,19 @@
-
-
 import UIKit
 
-class ChatRoomViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
+class ChatRoomViewController: UIViewController {
     @IBOutlet var chatRoomTableView: UITableView!
     @IBOutlet var chatTextField: UITextField!
-    
     
     var chatRoomText = ""
     var chatList: [Chat] = []
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         configTableView()
-        /// view did appear 에서 하면 조금 느림
+        
         DispatchQueue.main.async {
             self.scrollToBottom()
         }
-        
     }
     
     private func configTableView() {
@@ -41,15 +36,26 @@ class ChatRoomViewController: UIViewController, UITableViewDelegate, UITableView
         chatTextField.placeholder = "메세지를 입력하세요"
     }
     
+    // 스크롤 바텀
     private func scrollToBottom() {
         let lastIndex = chatList.count - 1
         let indexPath = IndexPath(row: lastIndex, section: 0)
         
         chatRoomTableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
     }
+       
+    //MARK: -UI 액션
+    @IBAction func navBarColseTapped(_ sender: UIBarButtonItem) {
+        navigationController?.popViewController(animated: true)
+        
+    }
     
     
-    // MARK: - tableView
+}
+
+
+//MARK: 테이블 뷰 메서드
+extension ChatRoomViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return chatList.count
     }
@@ -72,14 +78,11 @@ class ChatRoomViewController: UIViewController, UITableViewDelegate, UITableView
             return partnerCell
         }
     }
-    
-    
-    //MARK: -UI 액션
-    @IBAction func navBarColseTapped(_ sender: UIBarButtonItem) {
-        navigationController?.popViewController(animated: true)
-        
-    }
-    
+}
+
+
+//MARK: 텍스트 필드 델리게이트
+extension ChatRoomViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         guard let newMessage = textField.text else { return false }
         let date = Date()
@@ -98,6 +101,4 @@ class ChatRoomViewController: UIViewController, UITableViewDelegate, UITableView
         scrollToBottom()
         return false
     }
-    
-    
 }

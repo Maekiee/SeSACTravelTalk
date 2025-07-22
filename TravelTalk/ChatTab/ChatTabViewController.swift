@@ -1,12 +1,8 @@
 import UIKit
 
-class ChatTabViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UISearchBarDelegate {
+class ChatTabViewController: UIViewController {
     @IBOutlet var chatTabCollectionView: UICollectionView!
-    @IBOutlet var searchBar: UISearchBar! {
-        didSet {
-            //
-        }
-    }
+    @IBOutlet var searchBar: UISearchBar!
     
     private let chatRoomList: [ChatRoom] = ChatList.list
     private var list: [ChatRoom] = [] {
@@ -38,7 +34,7 @@ class ChatTabViewController: UIViewController, UICollectionViewDelegate, UIColle
     }
     
     // ****
-    func createLayout() -> UICollectionViewFlowLayout {
+    private func createLayout() -> UICollectionViewFlowLayout {
         let layout = UICollectionViewFlowLayout()
         let deviceWidth = UIScreen.main.bounds.width
         layout.itemSize = CGSize(width: deviceWidth, height: 80)
@@ -47,19 +43,6 @@ class ChatTabViewController: UIViewController, UICollectionViewDelegate, UIColle
         layout.minimumLineSpacing = 20
         layout.scrollDirection = .vertical
         return layout
-    }
-    
-    //MARK: 검색
-    // 입력할 때마다 호출
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        guard let searchingValue = searchBar.text else { return }
-        searchingChatRoom(searchingValue)
-    }
-    
-    // 엔터시 호출
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        guard let searchingValue = searchBar.text else { return }
-        searchingChatRoom(searchingValue)
     }
     
     private func searchingChatRoom(_ searchWord: String) {
@@ -71,9 +54,13 @@ class ChatTabViewController: UIViewController, UICollectionViewDelegate, UIColle
         
         list = filerList.isEmpty ?  chatRoomList : filerList
     }
+}
+
+
+
+//MARK: 컬렉션뷰 메서드
+extension ChatTabViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
-    
-    //MARK: 컬렉션뷰 메서드
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return list.count
     }
@@ -96,7 +83,19 @@ class ChatTabViewController: UIViewController, UICollectionViewDelegate, UIColle
         
         navigationController?.pushViewController(vc, animated: true)
     }
+}
 
-
-
+//MARK: 검색
+extension ChatTabViewController: UISearchBarDelegate {
+    // 입력할 때마다 호출
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        guard let searchingValue = searchBar.text else { return }
+        searchingChatRoom(searchingValue)
+    }
+    
+    // 엔터시 호출
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let searchingValue = searchBar.text else { return }
+        searchingChatRoom(searchingValue)
+    }
 }
