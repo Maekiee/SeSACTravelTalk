@@ -1,7 +1,6 @@
 import UIKit
 
-class ChatTabCollectionViewCell: UICollectionViewCell {
-
+class ChatTabCollectionViewCell: UICollectionViewCell, ConfigurationCellProtocol {
     @IBOutlet var profileImage: UIImageView!
     @IBOutlet var userNameLabel: UILabel!
     @IBOutlet var messageLabel: UILabel!
@@ -9,11 +8,6 @@ class ChatTabCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        configureView()
-    }
-
-    
-    private func configureView() {
         profileImage.setCircleImage()
         
         userNameLabel.textColor = .black
@@ -26,10 +20,11 @@ class ChatTabCollectionViewCell: UICollectionViewCell {
         lastMessageTimeLabel.font = .systemFont(ofSize: 12, weight: .regular)
     }
     
-    func configureData(row: ChatRoom) {
-        profileImage.image = row.setChatRoomImage
-        userNameLabel.text = row.chatroomName
-        messageLabel.text = row.chatList.last?.message
-        lastMessageTimeLabel.text = row.chatList.last?.formatDate
+    func configureData(row: Any) {
+        let chatRoom = row as! ChatRoom
+        profileImage.image = chatRoom.setChatRoomImage
+        userNameLabel.text = chatRoom.chatroomName
+        messageLabel.text = chatRoom.chatList.last?.message
+        lastMessageTimeLabel.text = chatRoom.chatList.last?.formatDate
     }
 }

@@ -1,6 +1,7 @@
 import UIKit
 
-class ChatTabViewController: UIViewController {
+
+class ChatTabViewController: UIViewController, ViewControllerConfigurationProtocol {
     @IBOutlet var chatTabCollectionView: UICollectionView!
     @IBOutlet var searchBar: UISearchBar!
     
@@ -16,7 +17,7 @@ class ChatTabViewController: UIViewController {
         configureView()
     }
     
-    private func configureView() {
+    func configureView() {
         title = "TRAVEL TALK"
         searchBar.delegate = self
         chatTabCollectionView.dataSource = self
@@ -29,8 +30,6 @@ class ChatTabViewController: UIViewController {
         searchBar.searchBarStyle = .minimal
         
         chatTabCollectionView.collectionViewLayout = createLayout()
-        
-        
     }
     
     // ****

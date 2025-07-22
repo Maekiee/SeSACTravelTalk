@@ -1,9 +1,7 @@
 
 import UIKit
 
-class PartnerChatTableViewCell: UITableViewCell {
-    
-    
+class PartnerChatTableViewCell: UITableViewCell, ConfigurationCellProtocol {
     @IBOutlet var profileImage: UIImageView!
     @IBOutlet var userNameLabel: UILabel!
     @IBOutlet var chatTimeLabel: UILabel!
@@ -23,12 +21,11 @@ class PartnerChatTableViewCell: UITableViewCell {
         chatTimeLabel.setChatTimeLabel()
     }
     
-    func configureCellData(row: Chat) {
-        profileImage.image = row.user.setImage
-        userNameLabel.text = row.user.name
-        chatContentLabel.text = row.message
-        chatTimeLabel.text = row.chatRoomFormatDate
+    func configureData(row: Any) {
+        let chat = row as! Chat
+        profileImage.image = chat.user.setImage
+        userNameLabel.text = chat.user.name
+        chatContentLabel.text = chat.message
+        chatTimeLabel.text = chat.chatRoomFormatDate
     }
-    
-    
 }

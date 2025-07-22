@@ -1,6 +1,6 @@
 import UIKit
 
-class ChatRoomViewController: UIViewController {
+class ChatRoomViewController: UIViewController, ViewControllerConfigurationProtocol {
     @IBOutlet var chatRoomTableView: UITableView!
     @IBOutlet var chatTextField: UITextField!
     
@@ -9,18 +9,17 @@ class ChatRoomViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configTableView()
+        configureView()
         
         DispatchQueue.main.async {
             self.scrollToBottom()
         }
     }
     
-    private func configTableView() {
+    func configureView() {
         title = chatRoomText
         navigationItem.leftBarButtonItem?.tintColor = .black
         chatRoomTableView.separatorStyle = .none
-        
         
         let xib = UINib(nibName: CellIdentifiers.myChatIdentifier, bundle: nil)
         chatRoomTableView.register(xib, forCellReuseIdentifier: CellIdentifiers.myChatIdentifier)
@@ -66,14 +65,14 @@ extension ChatRoomViewController: UITableViewDelegate, UITableViewDataSource {
         if chatItem.user.name == ChatList.me.name {
             let myChatCell = chatRoomTableView.dequeueReusableCell(withIdentifier: CellIdentifiers.myChatIdentifier, for: indexPath) as! MyChatTableViewCell
             
-            myChatCell.configureCellData(row: chatItem)
+            myChatCell.configureData(row: chatItem)
             
             
             return myChatCell
         } else {
             let partnerCell = chatRoomTableView.dequeueReusableCell(withIdentifier: CellIdentifiers.partnerCellIdentifier, for: indexPath) as! PartnerChatTableViewCell
     
-            partnerCell.configureCellData(row: chatItem)
+            partnerCell.configureData(row: chatItem)
             
             return partnerCell
         }

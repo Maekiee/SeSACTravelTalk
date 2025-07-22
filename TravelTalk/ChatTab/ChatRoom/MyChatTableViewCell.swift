@@ -1,8 +1,7 @@
 
 import UIKit
 
-class MyChatTableViewCell: UITableViewCell {
-
+class MyChatTableViewCell: UITableViewCell, ConfigurationCellProtocol {
     @IBOutlet var chatContainer: UIView!
     @IBOutlet var chatLabel: UILabel!
     @IBOutlet var chatTimeLabel: UILabel!
@@ -16,10 +15,9 @@ class MyChatTableViewCell: UITableViewCell {
         chatTimeLabel.setChatTimeLabel()
     }
     
-    func configureCellData(row: Chat) {
-        chatLabel.text = row.message
-        chatTimeLabel.text = row.chatRoomFormatDate
+    func configureData(row: Any) {
+        let chat = row as! Chat
+        chatLabel.text = chat.message
+        chatTimeLabel.text = chat.chatRoomFormatDate
     }
-    
-    
 }
